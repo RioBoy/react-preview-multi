@@ -9,14 +9,13 @@ const IframeWrapper = ({ children, title, mode, ...props }) => {
 
   const _handleStyleLink = useCallback(() => {
     const cssBootstrap = document.createElement('link');
-    cssBootstrap.href =
-      'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css'; // bootstrap style CDN
+    cssBootstrap.href = process.env.REACT_APP_BOOTSTRAP_CSS_CDN;
     cssBootstrap.rel = 'stylesheet';
     mounNodeStyle?.appendChild(cssBootstrap);
 
     const JSFile = [
-      'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js', // jquery CDN
-      'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js', // bootstrap js CDN
+      process.env.REACT_APP_BOOTSTRAP_JQUERY_CDN,
+      process.env.REACT_APP_BOOTSTRAP_JS_CDN,
     ];
     JSFile.forEach((item) => {
       const scriptJS = document.createElement('script');
