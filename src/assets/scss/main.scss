@@ -1,0 +1,15 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+$cultured: #f4f4f4;
+
+$theme-colors: (
+  'cultured': $cultured,
+);
+
+@import '~bootstrap/scss/bootstrap';
+
+.page-content {
+  height: 100vh;
+}
